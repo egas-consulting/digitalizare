@@ -1409,7 +1409,7 @@
             <span class="region-tag">${d.judet}, ${d.regiune}</span>
             
             <div class="big-stat">
-                <div class="big-number" style="color: ${scoreColor}">${d.scor_digitalizare.toFixed(2)}</div>
+                <div class="big-number" style="color: ${d.transparenta === 'nu_raspuns' ? '#999' : scoreColor}">${d.transparenta === 'nu_raspuns' ? 'N/A' : d.scor_digitalizare.toFixed(2)}</div>
                 <div class="big-label">Scor digitalizare (din 10)</div>
             </div>
             
