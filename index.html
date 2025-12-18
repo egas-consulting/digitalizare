@@ -72,42 +72,47 @@
         /* Indicator Section */
         #indicator-section {
             background: #f8f8f8;
-            padding: 15px 25px;
+            padding: 8px 25px;
             border-bottom: 1px solid #e0e0e0;
             text-align: left;
             flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
         
         .indicator-title {
-            font-size: 1.1rem;
+            font-size: 0.75rem;
             font-weight: 700;
             color: #714B3A;
-            margin-bottom: 12px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            white-space: nowrap;
         }
         
         .indicator-group {
-            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .indicator-main {
-            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
         }
         
         .indicator-sub-label {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             color: #999;
             letter-spacing: 0.3px;
-            margin-bottom: 6px;
-            margin-left: 2px;
+            white-space: nowrap;
         }
         
         .indicator-toggles {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 8px;
+            gap: 4px;
         }
         
         .indicator-btn {
@@ -115,14 +120,14 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
-            border-radius: 20px;
+            border-radius: 15px;
         }
         
         .indicator-btn.main {
-            padding: 10px 24px;
+            padding: 5px 14px;
             background: #fff;
-            border: 2px solid #714B3A;
-            font-size: 0.9rem;
+            border: 1.5px solid #714B3A;
+            font-size: 0.75rem;
             color: #714B3A;
         }
         
@@ -137,10 +142,10 @@
         }
         
         .indicator-btn.sub {
-            padding: 5px 12px;
+            padding: 3px 10px;
             background: #fff;
             border: 1px solid #ddd;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: #666;
         }
         
@@ -158,17 +163,17 @@
         .indicator-legend {
             display: flex;
             flex-direction: column;
-            max-width: 350px;
-            margin-top: 5px;
+            width: 180px;
+            margin-left: auto;
         }
         
         .indicator-legend-bar {
             display: flex;
-            height: 10px;
+            height: 8px;
             width: 100%;
-            border-radius: 5px;
+            border-radius: 4px;
             overflow: hidden;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         
@@ -176,7 +181,7 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             color: #888;
         }
 
@@ -413,7 +418,7 @@
         
         
         #panel {
-            width: 320px;
+            width: 420px;
             background: #fff;
             border-left: 1px solid #e0e0e0;
             padding: 20px;
@@ -1065,38 +1070,42 @@
             }
             
             #indicator-section {
-                padding: 12px 15px;
+                padding: 8px 15px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
             }
             
             .indicator-title {
-                font-size: 0.95rem;
-                margin-bottom: 10px;
+                font-size: 0.7rem;
             }
             
             .indicator-group {
-                margin-bottom: 8px;
+                flex-wrap: wrap;
+                gap: 6px;
             }
             
             .indicator-btn.main {
-                padding: 8px 18px;
-                font-size: 0.8rem;
+                padding: 5px 12px;
+                font-size: 0.7rem;
             }
             
             .indicator-sub-label {
-                font-size: 0.6rem;
+                font-size: 0.55rem;
             }
             
             .indicator-toggles {
-                gap: 5px;
+                gap: 4px;
             }
             
             .indicator-btn.sub {
-                padding: 4px 10px;
-                font-size: 0.65rem;
+                padding: 3px 8px;
+                font-size: 0.6rem;
             }
             
             .indicator-legend {
-                max-width: 280px;
+                width: 150px;
+                margin-left: 0;
             }
             
             #controls-bar {
@@ -1387,13 +1396,11 @@
     </div>
     
     <div id="indicator-section">
-        <div class="indicator-title">Distribuția scorului digitalizării la nivel național</div>
+        <div class="indicator-title">Indicator</div>
         
         <div class="indicator-group">
-            <div class="indicator-main">
-                <button class="indicator-btn main active" data-indicator="scor_digitalizare">Scor digitalizare total</button>
-            </div>
-            <div class="indicator-sub-label">Componente scor:</div>
+            <button class="indicator-btn main active" data-indicator="scor_digitalizare">Scor digitalizare total</button>
+            <span class="indicator-sub-label">Componente:</span>
             <div class="indicator-toggles">
                 <button class="indicator-btn sub" data-indicator="scor_d">Aplicații cetățeni</button>
                 <button class="indicator-btn sub" data-indicator="scor_e">Aplicații funcționari</button>
@@ -1403,10 +1410,7 @@
         </div>
         
         <div class="indicator-group">
-            <div class="indicator-main">
-                <button class="indicator-btn main" data-indicator="scor_investitie">Eficiență investiție</button>
-            </div>
-            <div class="indicator-sub-label">(scorul digitalizării raportat la cheltuieli per capita)</div>
+            <button class="indicator-btn main" data-indicator="scor_investitie">Eficiență investiție</button>
         </div>
         
         <div class="indicator-legend">
@@ -1415,9 +1419,9 @@
                 <span>0</span>
                 <span id="indicator-legend-max">10</span>
             </div>
-            <div class="indicator-legend-no-response" style="display: flex; align-items: center; margin-top: 8px; gap: 6px;">
-                <div style="width: 14px; height: 14px; background-color: #dc3545; border-radius: 50%;"></div>
-                <span style="font-size: 11px; color: #666;">Nu au răspuns</span>
+            <div class="indicator-legend-no-response" style="display: flex; align-items: center; margin-top: 4px; gap: 4px;">
+                <div style="width: 10px; height: 10px; background-color: #dc3545; border-radius: 50%;"></div>
+                <span style="font-size: 9px; color: #666;">Nu au răspuns</span>
             </div>
         </div>
     </div>
